@@ -1,0 +1,44 @@
+﻿@{
+    var date = DateTime.Now;
+}
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - moment1</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Moment 1</h1>
+        </div>
+        <div class="time">
+            Dagens datum  är: @date.ToString("yyyy-MM-dd")
+        </div>
+    </header>
+    <div class="main">
+        <aside class="nav">
+            <nav>
+                <a asp-page="/Index">Start</a>
+                <a asp-page="/Razor">Razor</a>
+                <a asp-page="/About">Om sidan</a>
+            </nav>
+        </aside>
+     <main role="main" class="main-content">
+
+            @RenderBody()
+        </main>
+
+    </div>
+    <footer >
+        Av Kate Tran - kontakta mig via e-post: <a href="mailto:katr1900@student.miun.se">katr1900@student.miun.se</a>
+        
+    </footer>
+
+   
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

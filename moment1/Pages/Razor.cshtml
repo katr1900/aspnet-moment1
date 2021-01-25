@@ -1,0 +1,17 @@
+﻿@page
+@model moment1.Pages.RazorModel
+@{
+}
+
+
+<h1>Razor</h1>
+<h3>Information</h3>
+<span>Datum/klockslag:</span> @DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+<p>@Model.Message</p>
+<h3>Kurser jag har läst</h3>
+<ul>
+    @foreach (var course in Model.Courses)
+    {
+        <li>@course</li>
+    }
+</ul>
